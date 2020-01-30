@@ -1,0 +1,378 @@
+@import url("https://fonts.googleapis.com/css?family=Dancing+Script:400,700&display=swap");
+
+// variables
+$dancing-script: "Dancing Script", cursive;
+$color-white: #ffffff;
+$medium: 768px;
+$large: 1200px;
+
+html {
+	box-sizing: border-box;
+	font-size: 16px;
+}
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+body {
+	font-family: sans-serif;
+	overflow-x: hidden;
+}
+
+img {
+	max-width: 100%;
+}
+
+.video-container {
+	// height: 100vh;
+	height: calc(100vh - 70px);
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+	video {
+		min-width: 100%;
+		min-height: 100%;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+		object-fit: cover;
+	}
+}
+
+.container-title {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	color: $color-white;
+	font-weight: bold;
+	h1 {
+		font-family: $dancing-script;
+		font-size: 3.5rem;
+		text-align: center;
+	}
+	p {
+		margin-top: 0.5rem;
+		font-weight: normal;
+		display: flex;
+		align-items: center;
+		img {
+			width: 22px;
+		}
+		small {
+			display: block;
+			font-size: 1rem;
+			padding-left: 0.2rem;
+		}
+	}
+}
+
+.navigation {
+	&__ul {
+		padding-left: 0;
+		margin-top: 0;
+		margin-bottom: 0;
+		list-style: none;
+		display: flex;
+	}
+	&__item {
+		transition: 0.8s;
+		cursor: pointer;
+		&:hover {
+			background-color: rgba(#000, 0.8);
+		}
+	}
+	&__link {
+		text-decoration: none;
+		color: $color-white;
+		display: inline-block;
+		font-size: 1.3rem;
+		padding: 10px 8px;
+
+		@media screen and (min-width: $medium) {
+			padding: 10px 15px;
+		}
+
+		&.sticky {
+			font-size: 1rem;
+		}
+	}
+}
+
+.footer-home {
+	position: sticky;
+	top: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem 0;
+	background-color: rgba(#000, 0.87);
+	z-index: 1000;
+	p {
+		color: $color-white;
+		text-align: center;
+		font-size: 1.2rem;
+	}
+}
+
+.menu {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(3, 335px);
+	position: relative;
+
+	@media screen and (min-width: $medium) {
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(2, 335px);
+	}
+
+	&__figure {
+		display: flex;
+		position: relative;
+		transition: transform 1s;
+
+		&:hover .menu__description {
+			display: flex;
+			transform: translateY(0);
+		}
+	}
+
+	&__description {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(#000, 0.8);
+		width: 100%;
+		height: 100%;
+		display: none;
+		align-items: center;
+		justify-content: center;
+		color: white;
+		flex-direction: column;
+		transform: translateY(-100%);
+
+		p {
+			font-size: 2rem;
+			font-family: $dancing-script;
+		}
+		p:nth-of-type(2) {
+			margin-top: 1rem;
+			font-size: 1rem;
+		}
+	}
+
+	&__float {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		padding: 1rem 0;
+		font-size: 3.5rem;
+		font-weight: bold;
+		font-family: $dancing-script;
+		width: 300px;
+		background-color: $color-white;
+		color: rgba(#000, 0.8);
+		display: none;
+		justify-content: center;
+		align-items: center;
+
+		@media screen and (min-width: $medium) {
+			display: flex;
+		}
+	}
+}
+
+.gallery {
+	.inner {
+		white-space: nowrap;
+		font-size: 0;
+		position: relative;
+		left: 0%;
+		transition: left 1.5s;
+	}
+
+	&__image {
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		display: inline-block;
+		height: 100vh;
+		// height: calc(100vh - 70px);
+		width: 100%;
+	}
+}
+
+.card {
+	width: 80%;
+	margin: 0 auto;
+	background-color: $color-white;
+	padding: 1rem 2rem;
+	text-align: center;
+	position: relative;
+	top: -200px;
+
+	&__title {
+		margin: 1rem 0 1.5rem;
+	}
+
+	&__subtitle {
+		font-size: 0.85rem;
+	}
+
+	& span {
+		font-family: $dancing-script;
+		font-weight: 900;
+		font-size: 1.5rem;
+	}
+}
+
+.contact {
+	position: relative;
+	top: -160px;
+	background-color: #333333;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.wrapper-contact {
+	perspective: 1000px;
+	transform-style: preserve-3d;
+	overflow: hidden;
+
+	@media screen and (min-width: $medium) {
+		padding: 80px;
+	}
+}
+
+.containerr {
+	min-width: 355px;
+	min-height: 390px;
+	border-radius: 20px;
+	position: relative;
+	transition: 1.5s ease-in-out;
+	transform-style: preserve-3d;
+
+	@media screen and (min-width: $medium) {
+		min-width: 750px;
+	}
+}
+.containerr:hover {
+	transform: rotateY(180deg);
+}
+
+.side {
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	padding: 20px 50px;
+	color: white;
+	transform-style: preserve-3d;
+	backface-visibility: hidden;
+	border-radius: 20px;
+}
+
+.content {
+	transform: translateZ(70px) scale(0.8);
+	line-height: 1.5em;
+}
+.content h1 {
+	position: relative;
+	font-size: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.content h1::before {
+	content: '';
+	position: absolute;
+	bottom: -20px;
+	height: 3px;
+	background-color: white;
+	width: 70px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.front {
+	z-index: 2;
+	background-image: url(../img/front.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	color: white;
+}
+
+.back {
+	background-color: #333333;
+	transform: rotateY(180deg);
+	z-index: 0;
+	padding-top: 10px;
+	background-image: url(../img/back.jpeg);
+	background-size: cover;
+	background-position: center;
+}
+.back h1 {
+	margin: 0;
+}
+
+form label,
+form input {
+	display: block;
+}
+
+form input,
+form textarea {
+	background: transparent;
+	border: 0;
+	border-bottom: 2px solid white;
+	padding: 5px;
+	width: 100%;
+	color: white;
+	outline: none;
+}
+
+form label {
+	margin: 25px 0;
+}
+
+form input[type="submit"] {
+	display: block;
+	width: auto;
+	margin: 10px auto;
+	padding: 5px 10px;
+	border: 3px solid white;
+	border-radius: 4px;
+	color: white;
+	cursor: pointer;
+}
+
+// maps
+#como-llegar {
+	width: 80%;
+	margin: 0 auto;
+	margin-top: -50px;
+}
+#map {
+	height: 500px;
+}
+#message {
+	text-align: center;
+	padding: 1rem 0;
+	background: #222222;
+	color: white;
+}

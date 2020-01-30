@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <meta name="description" content="Come rico y barato en el mejor restaurant de la ciudad, servicio de primera. Especialidad en pescados y mariscos"/>
+    <link rel="stylesheet" href="./css/styles.css"/>
+    <title>Restaurant facilito</title>
+  </head>
+  <body>
+    <div class="contenedor">
+      <div class="video-container">
+        <video autoplay="autoplay" loop="loop" muted="muted" width="1280" height="720" poster="./img/poster.jpg">
+          <source src="./video/video.mp4" type="video/mp4"/>
+          <source src="./video/video.webm" type="video/webm"/>
+        </video>
+      </div>
+      <div class="container-title"><img src="./img/logo.png" alt="logo" width="200"/>
+        <h1>Restaurant Facilito</h1>
+        <p><img src="./img/clock.png" alt="reloj"/><small>Abierto ahora</small></p>
+      </div>
+      <div class="footer-home">
+        <nav class="navigation sticky">
+          <ul class="navigation__ul">
+            <li class="navigation__item"><a class="navigation__link sticky" href="#inicio">Inicio</a></li>
+            <li class="navigation__item"><a class="navigation__link sticky" href="#menu">Menu</a></li>
+            <li class="navigation__item"><a class="navigation__link sticky" href="#galeria">Galeria</a></li>
+            <li class="navigation__item"><a class="navigation__link sticky" href="#contacto">Contacto</a></li>
+            <li class="navigation__item"><a class="navigation__link sticky" href="#como-llegar">Como llegar</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="menu" id="menu">
+        <figure class="menu__figure"><img class="menu__img" src="./img/chocolate.jpg" alt="Chocolate"/>
+          <div class="menu__description">
+            <p>Chocolate</p>
+            <p>$50.00</p>
+          </div>
+        </figure>
+        <figure class="menu__figure"><img class="menu__img" src="./img/pizza.jpg" alt="Pizza Peperoni"/>
+          <div class="menu__description">
+            <p>Pizza Peperoni</p>
+            <p>$100.00</p>
+          </div>
+        </figure>
+        <figure class="menu__figure"><img class="menu__img" src="./img/burrito.jpg" alt="Burrito"/>
+          <div class="menu__description">
+            <p>Burrito</p>
+            <p>$150.00</p>
+          </div>
+        </figure>
+        <figure class="menu__figure"><img class="menu__img" src="./img/hamburger.jpg" alt="Hamburger"/>
+          <div class="menu__description">
+            <p>Hamburger</p>
+            <p>$80.00</p>
+          </div>
+        </figure>
+        <figure class="menu__figure"><img class="menu__img" src="./img/espaguetis.jpg" alt="Espaguetis"/>
+          <div class="menu__description">
+            <p>Espaguetis</p>
+            <p>$120.00</p>
+          </div>
+        </figure>
+        <figure class="menu__figure"><img class="menu__img" src="./img/ceviche.jpg" alt="Ceviche"/>
+          <div class="menu__description">
+            <p>Ceviche</p>
+            <p>$30.00</p>
+          </div>
+        </figure>
+        <div class="menu__float">Menú</div>
+      </div>
+      <div class="gallery" id="galeria">
+        <div class="inner">
+          <div class="gallery__image" style="background-image: url(./img/chocolate.jpg)"></div>
+          <div class="gallery__image" style="background-image: url(./img/pizza.jpg)"></div>
+          <div class="gallery__image" style="background-image: url(./img/burrito.jpg)"></div>
+          <div class="gallery__image" style="background-image: url(./img/hamburger.jpg)"></div>
+          <div class="gallery__image" style="background-image: url(./img/espaguetis.jpg)"></div>
+          <div class="gallery__image" style="background-image: url(./img/ceviche.jpg)"></div>
+        </div>
+      </div>
+      <div class="card">
+        <p class="card__title">En <span>RestauranteFacilito</span> cocinar no es una profesión, no es una técnica, es un <span>arte</span></p>
+        <p class="card__subtitle">Lorem ipsum dolor sit amet consectetur, adipisicing elit.  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et deserunt quod ullam laudantium molestiae consequuntur nihil quidem, modi sapiente beatae inventore dicta quos atque ab! Libero sapiente dignissimos temporibus natus. - <span>Coco - Chef</span></p>
+      </div>
+      <div class="contact" id="contacto">
+        <div class="wrapper-contact">
+          <div class="containerr">
+            <div class="front side">
+              <div class="content"><br/><br/><br/><br/>
+                <h1>3D Contact</h1>
+              </div>
+            </div>
+            <div class="back side">
+              <div class="content">
+                <h1>Contact Me</h1>
+                <form id="form" action="https://formspree.io/mbjdjlgz" method="POST">
+                  <label>Tu nombre:</label>
+                  <input type="text" name="name" placeholder="Tu nombre"/>
+                  <label>Tu email:</label>
+                  <input type="email" name="email" placeholder="example@gmail.com"/>
+                  <label>Tu mensaje</label>
+                  <textarea placeholder="The mensaje" name="mensaje"></textarea>
+                  <input id="send" type="submit" value="Enviar"/>
+                </form>
+                <div id="status"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="como-llegar">
+        <div id="map"></div>
+        <div id="message">Prueba</div>
+      </div>
+    </div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnnvjAKeMdTCtJ3cp726k5kcmnjaJyCXI">// api de google maps</script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
